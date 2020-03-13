@@ -1,0 +1,31 @@
+    <title>News</title>
+  </head>
+  <body>
+
+    <div class="container mt-5">
+
+    <hr class ="my-4" id= "topbreak">
+
+      <h1>The <%= @location%> Daily</h1>
+
+    <hr class ="my-4" id= "bottombreak">
+
+    <h2> Current Weather in <p3><%= @location%></p3><a href="/"><p4>  (Wrong city? click here)</p4></a></h2>
+
+    <p> In <%= @location%>, it is currently <p2><i class="fas fa-temperature-high"></i><%= @current_temperature %></p2> and <p2><%= @conditions %></p2> </p>
+    <p> We are looking at a seven-day forecast of :</p>
+
+    <div class = "row mt-4">
+        <div class = "col-sm">
+            <h4><em>Day</em></h4>
+            <p><em>High of (℉)</em></p>
+            <p><em>Conditions</em></p>
+        </div>
+        <% for day in @daily_array %>
+        <div class = "col-sm text-center">
+            <h4><%= Time.at(day["time"]).strftime("%a")%></h4>
+            <p><i class="fas fa-temperature-high"></i><%= day["temperatureHigh"] %></p>
+            <p><%= day["summary"] %></p>
+        </div>
+        <% end%>
+    </div>

@@ -1,0 +1,222 @@
+  /* Typography */
+  body {
+
+  /* Everything is Raleway */
+    font-family: 'Rubik', sans-serif;
+    font-size: 12pt;
+    color: rgb(68, 63, 63)
+  }
+
+  h1{
+    font-family: 'Oleo Script', cursive;
+    font-size: 30pt;
+    color: rgb(6,39,99)
+  }
+
+  h2 {
+    font-family: 'Oleo Script', cursive;
+      font-size: 20pt;
+      color: rgb(6, 39, 99)
+  }
+
+  h3 {
+      font-family: 'Rubik',sans-serif;
+      font-size: 14pt;
+      color: grey;
+      text-transform: uppercase;
+  }
+
+  h4 {
+    font-family: 'Rubik',sans-serif;
+    font-size: 18pt;
+    color: grey;
+    text-transform: uppercase;
+    }
+
+  h5 {
+    font-family: 'Rubik',sans-serif;
+    font-size: 14pt;
+    color: rgb(6,39,99);
+    text-transform: uppercase;
+    }
+
+  h6 {
+    font-family: 'Oleo Script', cursive;
+        font-size: 40pt;
+        color: rgb(6,39,99)
+  }
+
+  h7 {
+      font-family: 'Rubik', sans-serif;
+      font-size: 25pt;
+      color: rgb(6,39,99);
+      text-transform: uppercase;
+  }
+
+  h8 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 8pt;
+    color: rgb(68, 63, 63)
+  }
+
+  h9 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 8pt;
+    color: white
+  }
+
+  h10 {
+    font-family: 'Oleo Script', cursive;
+    font-size: 10pt;
+    color: white
+  }
+
+  /* Navbar background color */
+  .navbar {
+    background-color: white;
+    font-size: 10pt;
+  }
+  
+  .navbar-brand{
+    position: absolute;
+    left: 50%;
+    transform:translateX(-50%);
+    display: block;
+  }
+  
+  .navbar-brand img {
+    width: 200px;
+    height: 41px;
+  }
+
+  .navbar-toggler img{
+    float: none;
+  }
+  .btn {
+      background-color: white;
+      opacity: 80%;
+      color: black;
+  }
+
+  .dropdown-item{
+    font-size: 10pt;
+  }
+
+  /* Index Jumbotron background and font styles */
+  .jumbotron {
+    /* Background */
+    background-attachment: fixed;
+    background-image: url(foodwithtable.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+    padding-top: 15%;
+    padding-bottom: 15%;
+
+    /* Fonts */
+    color: white;
+  }
+  
+  .btn-outline-light {
+      font-size: 14pt;
+      justify-content: center
+  }
+
+  /* Main page images */
+  .col-sm-4 img {
+    height: 396.2px;
+    width: 283px;
+    object-fit: cover;
+  }
+
+  .featured img {
+    height: 300px;
+    width: 500px;
+    object-fit: cover;
+  }
+
+  /* Recipe Elements */
+
+  .recipe img {
+      max-height: none;
+      width: 1100px;
+      object-fit: cover;
+  }
+  
+  /* Card Elements */
+  .card img{
+      height: 500px;
+      object-fit: cover;
+  }
+
+  /* Fav Cities  */
+
+  .cities img{
+      height: 900px;
+      width: 500px;
+      object-fit: cover;
+  }
+
+  /* City Establishments */
+    /* Vancouver */
+  .jumbotron2 {
+    /* Background */
+    background-attachment: fixed;
+    background-image: url(vancity.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+    padding-top: 5%;
+    padding-bottom: 15%;
+
+    /* Fonts */
+    /* The text-shadow helps the white text stand out better on a darker background */
+    color: white;
+    text-shadow: 1px 1px 1px black;
+  }
+
+  .btn-outline-light {
+    color: black;
+    text-shadow: none;
+  }
+
+    /* Taipei */
+  .jumbotron3 {
+    /* Background */
+    background-attachment: fixed;
+    background-image: url(taipei2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+    padding-top: 5%;
+    padding-bottom: 20%;
+
+    /* Fonts */
+    /* The text-shadow helps the white text stand out better on a darker background */
+    color: white;
+    text-shadow: 1px 1px 1px black;
+  }
+  
+  /* About Page */
+  #headshot img{
+    height: 500px;
+    width: 400px;
+    object-fit: cover;
+  }
+  
+  /* Subscribe form */
+  .subscribe {
+    background-color: rgb(248, 242, 242);
+    padding-top: 8%;
+    padding-bottom: 10%;
+  }
+  .subscribe form {
+    padding-left: 8%
+  }
+  /* The footer */
+  .footer {
+      background-color: rgb(6,39,99);
+      position: bottom;
+      text-align: center;
+  }
+  

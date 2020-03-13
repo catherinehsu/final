@@ -1,0 +1,5 @@
+<h1>All Classes</h1>
+
+<% for cookclass in @cookclasses %>
+    <p><a href="/cookclasses/<%= cookclass[:id] %>"><%= cookclass[:title] %></a></p>
+<% end %>
