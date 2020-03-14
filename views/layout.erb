@@ -30,7 +30,7 @@
   <!-- Navbar Element -->
   <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white">
     <div class="container">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="/">
         <img src="MintoLogo.png">
       </a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,10 +41,10 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">HOME <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/cookclasses">COOKING CLASSES <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">COOKING CLASSES <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="latestrecipes.html" id="navbarDropdown" role="button"
@@ -78,11 +78,23 @@
             <a class="nav-link" href="about.html">ABOUT</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="subscribe.html">SUBSCRIBE</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="contact.html">CONTACT</a>
           </li>
+          <% if @current_user %>
+            <li class="navbar-text">
+                    Logged in as <%= @current_user[:name] %>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">LOG OUT</a>
+            </li>
+         <% else %>
+            <li class="nav-item">
+                <a class="nav-link" href="/users/new">SIGN UP</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logins/new">SIGN IN</a>
+            </li>
+         <% end %>
         </ul>
       </div>
     </div>
