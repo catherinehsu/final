@@ -18,7 +18,8 @@ DB.create_table! :cookclasses do
 end
 DB.create_table! :rsvps do
   primary_key :id
-  foreign_key :cookclasses_id
+  foreign_key :cookclass_id
+  foreign_key :user_id
   Boolean :going
   String :name
   String :email

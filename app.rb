@@ -70,8 +70,8 @@ get "/cookclasses/:id" do
     @cookclass = cookclasses_table.where(id: params[:id]).to_a[0]
     pp @cookclass
 
-    @rsvps = rsvps_table.where(cookclasses_id: @cookclass[:id]).to_a
-    @going_count = rsvps_table.where(cookclasses_id: @cookclass[:id], going: true).count
+    @rsvps = rsvps_table.where(cookclass_id: @cookclass[:id]).to_a
+    @going_count = rsvps_table.where(cookclass_id: @cookclass[:id], going: true).count
 
     view "cookclass"
 end
@@ -92,7 +92,7 @@ post "/cookclasses/:id/rsvps/create" do
     @cookclass = cookclasses_table.where(id: params[:id]).to_a[0]
     # next we want to insert a row in the rsvps table with the rsvp form data
     rsvps_table.insert(
-        cookclasses_id: @cookclass[:id],
+        cookclass_id: @cookclass[:id],
         user_id: session["user_id"],
         comments: params["comments"],
         going: params["going"]
@@ -198,4 +198,10 @@ get "/logout" do
     # remove encrypted cookie for logged out user
     session["user_id"] = nil
     redirect "/logins/new"
+end
+
+# about page
+
+get "/about" do
+    view "about"
 end
