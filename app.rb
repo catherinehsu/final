@@ -25,33 +25,6 @@ before do
     @current_user = users_table.where(id: session["user_id"]).to_a[0]
 end
 
-# enter your Dark Sky API key here
-ForecastIO.api_key = "0329940053e738bed5b2dedd3528c6dd"
-
-#Geocode API
-get "/geocode" do
-  view "ask"
-end
-
-get "/news" do
-
-#Geocoder results - assign variables
-    @location = params["location"]
-    @results = Geocoder.search(params["location"])
-    @lat_long = @results.first.coordinates # => [lat, long]
-    @coordinates = "#{@lat_long[0]}, #{@lat_long[1]}"
-
-#Geocoder Results
-    @forecast = ForecastIO.forecast(@lat_long[0], @lat_long[1]).to_hash
-    @current_temperature = @forecast["currently"]["temperature"]
-    @conditions = @forecast["currently"]["summary"]
-
-
-    @daily_array = @forecast["daily"]["data"]
-
-  view "news"
-end
-
 # homepage and list of cookclasses (aka "index")
 get "/" do
     puts "params: #{params}"
@@ -72,6 +45,11 @@ get "/cookclasses/:id" do
 
     @rsvps = rsvps_table.where(cookclass_id: @cookclass[:id]).to_a
     @going_count = rsvps_table.where(cookclass_id: @cookclass[:id], going: true).count
+
+    results = Geocoder.search(@cookclass[:location])
+    @lat_long = results.first.coordinates.to_a # => [lat, long]
+    @lat = "#{@lat_long [0]}"
+    @long = "#{@lat_long [1]}"
 
     view "cookclass"
 end
